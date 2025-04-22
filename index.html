@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocidad sobre ruedas</title>
+    <style>
+
+body {
+    background: rgb(255, 235, 222) !important;
+    font-family:Georgia !important;
+    margin: 15px !important;
+    padding-top: 0px;
+    margin-top: 40px;
+}
+
+       
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(160, 71, 12);
+    z-index: 1000;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(160, 71, 12); 
+    z-index: 1000;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1; 
+
+} 
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    padding: 8px 12px;
+}
+
+nav ul li a:hover  {
+    background-color: rgb(214, 152, 111); 
+    color: #050505;
+    border-radius: 5px;
+}
+
+#Title, #Temario, #Datosgenerales, #informacion-adicional, #informacion-personal {
+    padding-top: 60px; 
+}
+
+header, footer {
+    text-align: center;
+}
+
+header {
+    text-align: center;
+    padding: 6px;
+    margin-top: 15px; 
+}
+
+h1 {
+    font-size: 36px;
+    color: rgb(78, 52, 46); 
+    font-family:Georgia;
+
+}
+
+ 
+.org {
+background-color: #f1d0b8; 
+  border: 1px solid #f5f2e9; 
+  padding: 20px; 
+  margin: 20px; 
+}
+
+.org {
+background-color: rgb(252, 201, 167); 
+  border: 1px solid #f5f2e9; 
+  padding: 20px; 
+  margin: 20px; 
+  border-radius: 15px;  
+}
+
+.box {
+  background-color: lch(84.62% 27.43 60.49); 
+  border: 1px solid #f5f2e9; 
+  padding: 20px ; 
+  margin: 20px; 
+  border-radius: 5px; 
+  box-shadow: 2px 2px 5px #fff4ec; 
+  margin-right: 2%;      
+  vertical-align: top;   
+  box-sizing: border-box; 
+  width: 47%; 
+ min-width: 300px; 
+}
+
+.cuadro-lado-a-lado:last-child { 
+  margin-right: 0;
+
+} 
+
+.contenedor, .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.box2, .box3 {
+  flex: 1 1 45%; 
+  min-width: 300px ;
+  background-color: rgb(252, 201, 167);
+  padding: 20px !important;
+  border-radius: 10px;
+  border: 1px solid #f5f2e9;
+  box-shadow: 2px 2px 5px #fff4ec;
+  font-size: 16px !important ; 
+  text-align: justify !important ;
+
+}
+
+@media (max-width: 768px) {
+  
+  .box2, .box3 {
+    flex: 1 1 100%;
+  }
+}
+
+#DatosGenerales {
+  color: #333; 
+  font-size: 1.5em; 
+  margin-bottom: 0px; 
+  border-bottom: 2px solid #ccc; 
+  padding-bottom: 5px; 
+}
+
+p {
+  color: #000000; 
+  line-height: 1.6; 
+}
+#Temario {
+    background-color: #ffffff;  
+    border-radius: 15px;        
+    padding: 20px;            
+    margin: 20px 0;          
+    box-shadow: 0px 4px 8px rgba(88, 47, 20, 0.267); 
+}
+
+.listtemario{
+    background-color: rgb(255, 200, 150); 
+    border-radius: 15px;       
+    padding: 20px;             
+    margin-bottom: 20px;      
+    box-shadow: 0px 4px 8px rgba(160, 75, 43, 0.1) !important;  
+    border-style: groove; 
+    color: rgb(122, 53, 10) !important;
+    
+}
+
+.h3adicional {
+  text-align: justify;
+    font-size: 24px; 
+    font-weight: bold;
+    color: rgb(0, 0, 0) !important; 
+}
+
+strong {
+  font-weight: bold; 
+  color: #a74d29; 
+}
+
+em {
+  font-style: italic; 
+  color: #6c757d; 
+}
+
+#img-general {
+  display: block;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 5px; /
+  box-shadow: 2px 2px 5px #eee; 
+}
+
+.org {
+background-color: rgb(252, 201, 167); 
+  border: 1px solid #f5f2e9; 
+  padding: 20px; 
+  margin: 20px; 
+  border-radius: 15px;  
+}
+
+header, h2, h3, h4, p, article, #Descripción, #informacion-adicional, footer, .texto-grande {
+    font-family: Georgia !important;
+}
+
+h1 {
+    font-size: 60px;
+    color: rgb(209, 85, 3);
+    text-shadow: 3px 3px 5px rgb(255, 173, 118);
+    margin-bottom: 20px;
+    font-family:Georgia;
+
+}
+
+#imgtipos { 
+  margin-bottom: 30px;
+}
+
+#equipamiento {
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
+#tiposdepatines{
+margin-top: 30px;
+margin-bottom: 100px;
+}
+
+#orígenes {
+margin-top: 10px;
+margin-bottom: 30px;
+text-align: center !important;
+}
+
+h2, #DatosGenerales, #Historia, #tiposdepatines, #informacion-adicional{
+    
+  font-size: 40px !important;
+    color: rgb(255, 102, 0);
+    text-align: center;
+}
+
+p, #Descripción, article, footer {
+    font-size: 25px;
+    line-height: 1.6;
+}
+
+article, #InformaciónAdicional {
+    background: rgb(255, 200, 150);
+    font-family: Georgia;
+    
+}
+
+section#DatosGenerales {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+section#DatosGenerales h2,
+section#DatosGenerales p {
+    margin-top: 20px;
+}
+
+section#DatosGenerales img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+#orígenes, #nivel, .seccion-deporte h4#mismodeporte, .seccion-deporte p,#listaadicional {
+    font-size: 25px;
+    color: black;
+    text-align: justify;
+    margin-bottom:20px ;
+}
+
+#informacion-personal {
+    background: rgb(243, 170, 106);
+    color: rgb(0, 0, 0);
+    font-size: 23px;
+    text-align: justify;
+    padding: 20px;             
+    border-radius: 10px;      
+    border: 5px solid orange;
+    margin: 20px 0;            
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    line-height: 1.6;         
+}
+
+#informacion-personal li {
+    margin-bottom: 10px;       
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+    list-style: none; 
+    padding: 8px;              
+    background-color: #fff5e6; 
+    border-radius: 5px;        
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#informacion-personal li:last-child {
+    margin-bottom: 0; 
+}
+
+#informacion-personal a, 
+#informacion-personal a:visited {
+    color: #682d06;     
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#informacion-personal a:hover {
+    text-decoration: underline;
+    color: #7a350a;
+}
+
+#informacion-personal a:focus {
+    color: #d46b29;
+}
+
+#informacion-personal a:active {
+    color: #c45608;
+}
+
+#fotopersonal {
+    margin: 20px auto;        
+    border-radius: 10px;  
+    width: 100%;             
+    max-width: 350px;         
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); 
+    display: block;          
+}
+
+#listaadicional {
+    list-style: none;       
+    padding: 0;             
+    margin: 0;            
+    font-size: 20px;         
+    color: #000000;          
+    font-family: Georgia, serif;
+    margin-bottom: 20px; 
+}
+
+#listaadicional {
+    list-style: none;       
+    padding: 0;             
+    margin: 0;            
+    font-size: 20px;         
+    color: #000000;          
+    font-family: Georgia, serif;
+    margin-bottom: 20px; 
+}
+#listaadicional {
+  list-style: none;       
+  padding: 0;             
+  margin: 0;         
+  font-size: 20px;         
+  color: #000000;          
+  margin-bottom: 30px;     
+  font-family: Georgia, serif;
+}
+
+#listaadicional li {
+  background-color: #ffffff; 
+  padding: 16px 24px;              
+  margin-bottom: 16px;             
+  border-left: 6px solid #853c12;  
+  border-radius: 10px;             
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
+  transition: all 0.3s ease;       
+}
+
+#listaadicional li:hover {
+  background-color: #f9f3ee;       
+  transform: scale(1.02);          
+  cursor: pointer;
+}
+
+#listaadicional li a {
+  color: #853c12;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+#listaadicional li a:hover {
+  color: #4E342E;
+  text-decoration: underline;
+}
+
+a[href^="mailto:"]:hover {
+    color: rgb(13, 71, 161);         
+    text-decoration: underline; 
+}
+
+a[href^="mailto:"]:focus {
+    background-color: #e3f2fd;  
+}
+
+.banner {
+color :rgb(206, 202, 202) !important;
+}
+
+#carruselPatinaje {
+  margin: 30px auto;
+  max-width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#carruselPatinaje img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  bottom: 20%;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-caption h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  color: #eee;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #000000;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.carousel-indicators .active {
+  background-color: #fff;
+  border: 2px solid #ff6600;
+}
+   
+/* Fondo y fuente general */
+body {
+  background-color: #fcc9a7;
+  font-family: 'Georgia' !important;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+/* Título principal */
+#Title {
+  font-family: 'Georgia';
+  font-size: 70px;
+  color: rgb(255, 102, 0);
+  text-align: center;
+  margin-top:0px;
+  margin-bottom: 60px;
+}
+
+/* Secciones y subtítulos */
+h2, h3 {
+  font-family: 'Georgia', serif;
+  color: rgb(126, 55, 9) !important;
+  align-items: center;
+}
+
+/* Parrafos generales */
+p {
+  font-family: 'Georgia';
+  font-size: 20px;
+}
+
+/* Lista de temario */
+.listtemario a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-family: 'Georgia';
+  font-size: medium;
+ 
+}
+
+.listtemario a:hover {
+  text-decoration: underline;
+}
+
+/* Ajuste del header */
+header {
+  background-color: transparent;
+  padding: 10px;
+ 
+}
+
+.carousel-custom {
+  background-color: transparent;
+  font-family: 'TuFuente', sans-serif;
+  color: #000;
+  margin-top: 90px;
+  margin-bottom:20px;
+}
+
+/* Tablas */
+#tabla-patines, #tabla-equipamiento, table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 20px;
+   text-align: justify;
+   color: black;
+   font-family:Georgia;
+}
+
+#tabla-patines caption, #tabla-equipamiento caption, caption {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    line-height: 2em;
+}
+
+#tabla-patines th, #tabla-equipamiento th, thead {
+    background-color: rgb(247, 175, 115);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border: 1px solid #000;
+}
+
+#tabla-patines td, #tabla-equipamiento td, td {
+    background-color: rgb(255, 245, 230);
+    padding: 10px;
+    border: 1px solid rgb(221, 221, 221);
+    margin-bottom: 10px;     
+    padding: 8px 15px; 
+}
+
+#tabla-patines tr:nth-child(even), #tabla-equipamiento tr:nth-child(even), tbody tr:nth-child(even) {
+    background-color: rgb(253, 242, 212);
+    text-align: justify;
+    color:black;
+}
+
+.imagen-patin, .imagen-equipamiento {
+    width: 200px;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 5px auto;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+</style>
+</head>
+
+<body>
+<nav>
+    
+        <ul>
+            <li><a href="#Title">Inicio</a></li>
+            <li><a href="#Temario">Temario</a></li>
+            <li><a href="#Datosgenerales">Contenido</a></li>
+            <li><a href="#informacion-adicional">Información Adicional</a></li>
+            <li><a href="#informacion-personal">Información Personal</a></li>
+     </ul>
+    </nav>
+
+    
+
+<body>  
+  <div class="carousel-custom carousel slide" data-bs-ride="carousel">  
+  <title>Carrusel Patinaje</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="carrusel-patinaje.css">
+</head>
+<body>
+
+<div id="carruselPatinaje" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <img src="https://fep.es/admin/noticias/fotos/6T0A5539.jpg" class="d-block w-100" alt="Slide 1">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+        <h3 class="banner">Desarrolla tu velocidad sobre ruedas</h3>
+        </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <img src="https://static-uat.cambiocolombia.com/inline-images/cuatro_patinadoras_colombianas_sobre_la_pista_0.png" class="d-block w-100" alt="Slide 2">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+        <h3 class="banner">Tipos de equipamiento</h3>
+        <p>Descubre las clases de patines del mercado</p>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <img src="https://static1.ara.cat/clip/71e1a25a-5e9c-4683-b102-52a13206ba9d_16-9-aspect-ratio_default_0.jpg" class="d-block w-100" alt="Slide 3">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+        <h3 class="banner">Beneficios del deporte</h3>
+        <p>Participa y vive la emoción de la pista</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Flechas -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carruselPatinaje" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carruselPatinaje" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+
+  <!-- Indicadores -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carruselPatinaje" data-bs-slide-to="0" class="active" aria-current="true"></button>
+    <button type="button" data-bs-target="#carruselPatinaje" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#carruselPatinaje" data-bs-slide-to="2"></button>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Carrusel -->
+<link rel="stylesheet" href="carrusel-patinaje.css">
+
+<link rel="stylesheet" href="estilos-propios.css">
+
+</body>
+</div>
+
+   
+<header> 
+    <h1 id="Title"> <strong>Velocidad sobre ruedas </strong></h1>
+</header> 
+
+<section>
+    <h3>Descripción de la página web</h3>
+    <p id="Descripción">"Velocidad sobre Ruedas" es el sitio perfecto para los apasionados del patinaje de velocidad. Aquí encontrarás todo lo relacionado con este deporte: su historia, la técnica, el equipamiento necesario y mucho más. No importa si estás dando tus primeros pasos sobre ruedas o ya eres un experto, en esta web encontrarás todo lo que necesitas para llevar tu pasión y tus habilidades al siguiente nivel.</p>
+   
+</section>
+
+<section>
+    <h2 id="Temario">Temario</h2>
+<div class="listtemario"> 
+    <article>
+        <h3 class="texto-grande">
+            <a href="#Datosgenerales">1. Datos Generales del Patinaje de Velocidad</a>
+        </h3>
+        </article>
+    
+    <article>   
+        <h3 class="texto-grande"> 
+        <a href="#Historia">2. Historia</a> 
+    </h3>
+      </article>
+
+    <article>
+        <h3 class="texto-grande">
+        <a href="#tiposdepatines">3. Tipos de Patines y sus Diferencias</a>
+    </h3>
+        <article>
+
+    <article>
+        <h3 class="texto-grande"> 
+        <a href="#equipamiento">4. Equipamiento </a>
+    </h3>
+        </article>
+
+    <article> 
+    <h3 class="texto-grande"> 
+    <a href="#informacion-adicional"> 5. Información adicional </a>
+</h3>
+</article> 
+</section>
+</div>
+</head>
+
+<!--La info -->
+<div  class="container">
+    <section id= "Datosgenerales" class="box2">
+      <h2>Datos Generales</h2>
+      <p>El patinaje de velocidad es una <strong>disciplina deportiva</strong>, en la cual el deportista debe combinar aspectos importantes como: técnica, resistencia física y estrategia competitiva. En este deporte, los atletas deben recorrer una distancia determinada en el <em>menor tiempo posible</em>, utilizando patines especializados dependiendo del nivel de la persona. Este deporte se caracteriza por practicarse en pistas departamentales de <strong>200 metros</strong>, aunque algunas pueden variar dependiendo de la localidad, siendo entre <em>160 y 180 metros</em>. Estas pistas están compuestas por dos rectas y dos curvas peraltadas (inclinadas), lo que permite a los patinadores mantener la velocidad sin perder el control en las curvas. En las competiciones de pista, se realizan tanto pruebas de <strong>velocidad</strong> (donde se busca el mejor tiempo en distancias cortas) como de <strong>fondo</strong>, que requieren mayor resistencia y estrategia. Durante las carreras, los patinadores suelen adoptar una postura aerodinámica <strong>para minimizar la resistencia al viento</strong> y aprovechar al máximo la fuerza de los desplazamientos.</p> </p>
+      <img id= "img-general"src="https://noticiascoopercom.co/wp-content/uploads/2024/04/Captura-de-Pantalla-2024-04-26-a-las-2.33.44-p.m-585x330.png" alt="Deportistas" style="display: block; margin: 20px auto; width: 90%; max-width: 600px;">
+      <p>Si deseas conocer más sobre este deporte, visita: <a href="https://capatinoficial.com/patinaje-velocidad" target="_blank">Patinaje de velocidad sobre ruedas</a></p>
+    </section>
+
+    
+    <section id= "Historia" class="box3">
+      <h2>Historia del Patinaje</h2>
+      <p>El patinaje de velocidad nació en Europa en el siglo XIX. Durante esta época, se empezaron a utilizar patines como medio de transporte sobre superficies lisas. Con el tiempo, esta práctica se transformó en <strong> una competencia deportiva reconocida a nivel mundial </strong>. A finales del siglo XIX, el patinaje de velocidad sobre ruedas fue reconocido como un deporte organizado, y en 1880 se celebraron las primeras competiciones en <strong> Estados Unidos </strong>  y <strong>Europa </strong>. Estas primeras carreras fueron principalmente de tipo <em> "sprint"</em>, en distancias cortas, y los competidores tenían que demostrar su habilidad para alcanzar velocidades altas en poco tiempo. Los sprints en el patinaje de velocidad exigían a los competidores una combinación de fuerza, técnica y agilidad. Los patinadores debían <strong>  realizar salidas explosivas,</strong> mantener una postura aerodinámica y ejecutar virajes precisos para optimizar su velocidad. </p>
+      <img src="https://patinaje2017.wordpress.com/wp-content/uploads/2017/01/patines-primeros.jpg?w=620" alt="historiadelpatinaje" style="display: block; margin: 20px auto; width: 100%; max-width: 300px;">
+      <p>Si deseas conocer más sobre la historia y las primeras comeptencias visita: <a href="https://www.olympics.com/es/deportes/patinaje-de-velocidad-sobre-ruedas/" target="_blank">Historia de: Patinaje de velocidad sobre ruedas</a></p>
+    </section>
+  </div>
+  
+  
+   
+  <section class="org">
+<table    >
+    <h2 id="orígenes" >Orígenes y Primeras Competiciones del Patinaje de Velocidad</h2>
+    <thead >
+        <tr>
+            <th>Aspecto</th>
+            <th>Descripción</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr > 
+            <td>Orígenes del patinaje</td>
+            <td>El patinaje de velocidad comenzó en Europa en el siglo XIX, como un medio de transporte sobre superficies congeladas y luego sobre superficies duras como asfalto.</td>
+        </tr>
+        <tr>
+            <td>Primeras competiciones</td>
+            <td>Las primeras competiciones formales comenzaron a celebrarse en Europa y Estados Unidos hacia finales del siglo XIX, inicialmente en distancias cortas.</td>
+        </tr>
+    </tbody>
+</table>
+</table>
+
+</section>
+
+<section id="tiposdepatines">
+    <h2>Tipos de Patines y sus Diferencias</h2>
+  
+    <section class="seccion-deporte"> 
+      <h4 id="mismodeporte"> <strong>¿Siempre hablamos del mismo deporte? </strong></h4>
+      <p>En definitiva <strong>no se habla del mismo deporte cuando mencionamos el patinaje.</strong> Existen varias modalidades dentro del patinaje sobre ruedas, como el patinaje de velocidad, el patinaje artístico, el hockey sobre patines y el roller derby, entre otros. Cada uno tiene reglas, técnicas y equipamiento específico, por lo que es <em>importante diferenciar</em> cuál es el enfoque al hablar de patinaje. </p>
+      <img id="imgtipos" src="https://madrid.clubtres60.com/wp-content/uploads/2014/01/patines-en-linea.png" alt="Diferentes tipos de patinaje" width="600 px"
+      
+      </section>
+
+      <h4 id="nivel">Elección del patín según el nivel del patinador</h4>
+     
+       <table id="tabla-patines">
+                <thead>
+            <tr>
+                <th>Tipo de Patín</th>
+                <th>Características</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+    <td>Recreativo</td>
+    <td>Patines especializados para principiantes y uso ocasional. Su diseño es cómodo, con botas acolchadas y ruedas de tamaño 60 o 70 para mayor estabilidad.</td>
+    <td><img src="https://http2.mlstatic.com/D_NQ_NP_955153-MCO75662769467_042024-O.webp" alt="Patín Recreativo" class="imagen-patin"></td>
+</tr>
+<tr>
+    <td>Semi Profesional</td>
+    <td>Patines diseñados para entrenamientos más intensivos. Combinan comodidad con mayor rigidez en la bota y ruedas más grandes entre 70 y 90 para mejor velocidad.</td>
+    <td><img src="https://http2.mlstatic.com/D_NQ_NP_862632-MCO43498091695_092020-O.webp" alt="Patín Semi Profesional" class="imagen-patin"></td>
+</tr>
+<tr>
+    <td>Profesional</td>
+    <td>Patines especializados para competiciones. Tienen botas más pequeñas, rígidas, ligeras y aerodinámicas, con ruedas grandes entre 90 y 110 (en algunos casos pueden alcanzar a ser de 120) que permiten alcanzar altas velocidades.</td>
+    <td><img src="https://m.media-amazon.com/images/I/61nSRp4yCPS.jpg" alt="Patín Profesional" class="imagen-patin"></td>
+</tr>
+
+    </table>
+</section>
+
+<section>
+<h2 id="equipamiento"> Equipamiento</h2>
+<table id="tabla-equipamiento">
+        <thead>
+      <tr>
+        <th>Categoría</th>
+        <th>Tipos y Recomendaciones</th>
+        <th>Imagen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Casco</td>
+        <td>
+          <ul>
+            <li>Cascos de patinaje específicos para protección contra impactos.</li>
+            <li>Ajuste adecuado y certificación de seguridad.</li>
+            <li>Reemplazar después de un impacto fuerte.</li>
+          </ul>
+        </td>
+        <td><img src="https://www.inercia.com/media/catalog/product/cache/1/image/800x800/444c2d39b70eef4bd4be784a84c4e942/f/e/feagle-helmetwhite_1.jpg" alt="Casco de patinaje" class="imagen-equipamiento"></td>
+      </tr>
+      <tr>
+        <td>Protecciones Esenciales</td>
+        <td>
+          <ul>
+            <li>Rodilleras, coderas y muñequeras para proteger articulaciones.</li>
+            <li>Guantes para evitar abrasiones en las manos.</li>
+            <li>Asegurar que las protecciones se ajusten correctamente.</li>
+          </ul>
+        </td>
+        <td><img src="https://i.ibb.co/cHBcTqp/hjkh.jpg" alt="Protecciones de patinaje" class="imagen-equipamiento"></td>
+      </tr>
+      <tr>
+        <td>Ropa Adecuada</td>
+        <td>
+          <ul>
+            <li>Ropa cómoda y ajustada que permita libertad de movimiento.(La ropa ajustada reduce la fricción con el aire, permitiendo que el patinador se desplace de manera más eficiente y rápida.)</li>
+            <li>Tejidos transpirables para regular la temperatura.</li>
+            <li>Considerar ropa reflectante para patinar de noche.</li>
+          </ul>
+        </td>
+        <td><img src="https://i.ibb.co/6cqvWCgk/PS-Racing-Suit-Women.jpg" alt="Ropa para patinaje" class="imagen-equipamiento"></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+    <h2 id="informacion-adicional">Información Adicional</h2>
+    
+    <h3 class="h3adicional">
+      El patinaje de velocidad no solo es emocionante, sino que también ofrece
+      varios beneficios para la salud:
+    </h3>
+  
+    <ul id="listaadicional">
+      <li>Mejora la resistencia cardiovascular.</li>
+      <li>Fortalece los músculos de las piernas.</li>
+      <li>Quema calorías y ayuda a mantener un peso saludable.</li>
+      <li>Mejora el equilibrio y la coordinación.</li>
+      <li>Reduce el estrés y mejora el estado de ánimo.</li>
+    </ul>
+  </section>
+    
+
+<footer id="informacion-personal">
+    <h3>Información Personal</h3>   
+    <ul class="info-personal">
+        <li><strong>Nombre:</strong> Isabella Mesa Gaviria</li>
+        <li><strong>Edad:</strong> 15 años</li>
+        <li><strong>Contacto:</strong> 312 7638131</li>
+        <li><strong>Correo electrónico:</strong> 
+            <a href="mailto:isabellamesagaviria@gmail.com">
+                isabellamesagaviria@gmail.com
+            </a>
+        </li>
+        <li><strong>Institución educativa:</strong> Skolmi</li>
+    </ul>
+    
+    <img id="fotopersonal" 
+         src="https://i.ibb.co/WWb6G3z8/Befunky.jpg" 
+         alt="Foto personal" 
+         width="270">
+    
+</footer>
+
+</body>
+</html>
+
+
